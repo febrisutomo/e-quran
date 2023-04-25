@@ -142,8 +142,6 @@ export default function Surat({ surat, tafsir }) {
     audioRef.current.pause();
     setAyatPlaying(1);
     setIsPlaying(false);
-    console.log(dynamicRoute);
-    console.log('ayat', ayatPlaying);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dynamicRoute]);
 
@@ -154,12 +152,19 @@ export default function Surat({ surat, tafsir }) {
       </Head>
 
       <div className="mb-8">
+        <div className="-ml-2 flex justify-center py-2 text-center">
+          <i
+            className={`surah-icon icon-${surat.nomor} -mr-1 text-4xl text-gray-900 dark:text-white`}
+          ></i>
+          <i className="surah-icon icon-0 -ml-2 text-4xl text-gray-800 dark:text-white"></i>
+        </div>
         <h1 className="text-center text-2xl font-semibold text-gray-900 dark:text-white">
           {surat.namaLatin}
         </h1>
-        <h3 className="text-semibold text-center text-gray-700 dark:text-gray-400">
+        <h3 className="text-semibold text-center text-sm text-gray-700 dark:text-gray-400">
+          {surat.arti} •{' '}
           {surat.tempatTurun === 'Mekah' ? 'Makkiyah' : 'Madaniyah'} •{' '}
-          {surat.arti} • {surat.jumlahAyat} Ayat{' '}
+          {surat.jumlahAyat} Ayat
         </h3>
       </div>
 
@@ -229,22 +234,9 @@ export default function Surat({ surat, tafsir }) {
             </button>
           </div>
           <div className="flex-grow">
-            {/* {!data ? (
-              <p>Loading...</p>
-            ) : (
-              <p
-                className={`mb-4 text-right font-indopak text-3xl leading-snug lg:mb-6 ${
-                  isPlaying && ayat.audio['05'] === audioSource
-                    ? 'text-primary-700 dark:text-primary-500'
-                    : 'text-dark-900 dark:text-white'
-                }`}
-              >
-                {data.verses[index]['text_indopak']}
-              </p>
-            )} */}
-
             <p
-              className={`mb-4 text-right font-indopak text-3xl leading-normal lg:mb-6 ${
+              dir="auto"
+              className={`mb-4 text-right font-isep-misbah text-2xl leading-[3rem] lg:mb-6 ${
                 isPlaying && ayatPlaying === ayat.nomorAyat
                   ? 'text-primary-700 dark:text-primary-500'
                   : 'text-dark-900 dark:text-white'
@@ -368,7 +360,10 @@ export default function Surat({ surat, tafsir }) {
                     </button>
                   </Dialog.Title>
                   <div className="overflow-y-auto px-4">
-                    <p className="mb-4 text-right font-indopak text-3xl leading-snug dark:text-white lg:mb-6">
+                    <p
+                      dir="auto"
+                      className="mb-4 text-right font-isep-misbah text-2xl leading-[3rem] dark:text-white lg:mb-6"
+                    >
                       {openedTafsir.ayat}
                     </p>
                     <div

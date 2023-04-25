@@ -57,15 +57,16 @@ export default function Home({ surats }) {
           </svg>
         </div>
         <input
-          className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-4 pl-10 text-gray-900 outline-none  focus:border-primary-500 focus:ring-primary-500  dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+          className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-4 pl-10 text-gray-900 outline-none focus:border-primary-500  focus:ring-primary-500 dark:border-gray-600  dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
           placeholder="Cari surat..."
           onChange={filterBySearch}
         />
       </div>
+
       <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {suratList.map((surat, index) => (
           <Link href={`surat/${surat.nomor}`} key={surat.nomor}>
-            <div className="group flex items-center justify-between rounded-lg border border-gray-300 bg-white p-4 hover:border-primary-500 hover:bg-primary-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:border-primary-100 dark:hover:bg-primary-700">
+            <div className="group flex items-center justify-between rounded-lg border border-gray-300 bg-white px-4 py-2 hover:border-primary-500 hover:bg-primary-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:border-primary-100 dark:hover:bg-primary-700 lg:p-4">
               <div className="flex items-center">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 group-hover:bg-primary-400 dark:bg-gray-500 ">
                   <p className="font-semibold text-gray-800  dark:text-white">
@@ -73,21 +74,25 @@ export default function Home({ surats }) {
                   </p>
                 </div>
                 <div className="flex-row items-center pl-5">
-                  <h4 className="text-lg font-semibold text-gray-800 dark:text-white">
+                  <h4 className="font-semibold text-gray-800 dark:text-white">
                     {surat.namaLatin}
                   </h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-300">
-                    {surat.arti}
+                  <p className="text-xs font-semibold text-gray-600 dark:text-gray-300">
+                    {surat.tempatTurun === 'Mekah' ? 'Makkiyah' : 'Madaniyah'} -{' '}
+                    {surat.jumlahAyat} Ayat
                   </p>
                 </div>
               </div>
               <div>
-                <p className="text-right font-indopak text-2xl dark:text-white">
+                {/* <p dir='auto' className="text-right font-isep-misbah text-lg leading-10 dark:text-white">
                   {surat.nama}
-                </p>
-                <p className="text-right text-sm text-gray-600 dark:text-gray-300">
+                </p> */}
+                <i
+                  className={`surah-icon icon-${surat.nomor} text-4xl text-gray-600 dark:text-white`}
+                ></i>
+                {/* <p className="text-right text-xs font-semibold text-gray-600 dark:text-gray-300">
                   {surat.jumlahAyat} Ayat
-                </p>
+                </p> */}
               </div>
 
               {/* <i className="surah-icon icon-1 text-4xl text-gray-600 dark:text-white"></i> */}
