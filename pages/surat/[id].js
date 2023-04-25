@@ -244,7 +244,7 @@ export default function Surat({ surat, tafsir }) {
             )} */}
 
             <p
-              className={`mb-4 text-right font-lateef text-4xl leading-snug lg:mb-6 ${
+              className={`mb-4 text-right font-indopak text-4xl leading-snug lg:mb-6 ${
                 isPlaying && ayatPlaying === ayat.nomorAyat
                   ? 'text-primary-700 dark:text-primary-500'
                   : 'text-dark-900 dark:text-white'
