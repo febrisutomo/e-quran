@@ -21,6 +21,7 @@ import {
   PauseIcon as PauseIconSolid,
   PlayIcon as PlayIconSolid,
 } from '@heroicons/react/24/solid';
+import { useRouter } from 'next/router';
 
 const audioFile = (surat, ayat) => {
   return `https://verses.quran.com/Alafasy/mp3/${surat
@@ -143,12 +144,17 @@ export default function Surat({ surat, tafsir }) {
   };
 
   const dynamicRoute = useRouter().asPath;
+
   React.useEffect(() => {
+    audioRef.current.pause();
     setIsPlaying(false);
     setAyatPlaying(1);
     setAudioSource(audioFile(surat.nomor, 1));
+    console.log('ayat', ayatPlaying);
+    console.log(dynamicRoute);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dynamicRoute]);
+
   return (
     <>
       <Head>
