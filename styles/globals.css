@@ -23,11 +23,6 @@
 }
 
 @font-face {
-  font-family: 'Saleem';
-  src: url(../public/fonts/_PDMS_Saleem_QuranFont.ttf);
-}
-
-@font-face {
   font-family: 'IsepMisbah';
   src: url(../public/fonts/IsepMisbah.ttf);
 }
