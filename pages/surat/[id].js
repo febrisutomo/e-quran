@@ -142,6 +142,13 @@ export default function Surat({ surat, tafsir }) {
     pauseAyat();
   };
 
+  const dynamicRoute = useRouter().asPath;
+  React.useEffect(() => {
+    setIsPlaying(false);
+    setAyatPlaying(1);
+    setAudioSource(audioFile(surat.nomor, 1));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dynamicRoute]);
   return (
     <>
       <Head>
