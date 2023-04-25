@@ -82,7 +82,7 @@ export default function Home({ surats }) {
                 </div>
               </div>
               <div>
-                <p className="text-right font-lateef text-3xl dark:text-white">
+                <p className="text-right font-indopak text-2xl dark:text-white">
                   {surat.nama}
                 </p>
                 <p className="text-right text-sm text-gray-600 dark:text-gray-300">
