@@ -59,9 +59,7 @@ export default function Surat({ surat, tafsir }) {
     readTafsir(openedTafsir.nomorAyat - 1);
   };
 
-  const [audioSource, setAudioSource] = React.useState(
-    audioFile(surat.nomor, 1)
-  );
+  const [audioSource, setAudioSource] = React.useState('');
 
   const audioRef = React.useRef();
 
@@ -97,13 +95,8 @@ export default function Surat({ surat, tafsir }) {
 
   const handleTogglePlayAyat = (nomorAyat) => {
     setIsShowAudioControl(true);
-    if (ayatPlaying === nomorAyat) {
-      if (isPlaying) {
-        pauseAyat();
-      } else {
-        audioRef.current.play();
-        setIsPlaying(true);
-      }
+    if (isPlaying && ayatPlaying === nomorAyat) {
+      pauseAyat();
     } else {
       playAyat(nomorAyat);
     }
@@ -147,11 +140,10 @@ export default function Surat({ surat, tafsir }) {
 
   React.useEffect(() => {
     audioRef.current.pause();
-    setIsPlaying(false);
     setAyatPlaying(1);
-    setAudioSource(audioFile(surat.nomor, 1));
-    console.log('ayat', ayatPlaying);
+    setIsPlaying(false);
     console.log(dynamicRoute);
+    console.log('ayat', ayatPlaying);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dynamicRoute]);
 
