@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'IndoPak';
+  src: url(../public/fonts/indopak/indopak-nastaleeq-waqf-lazim-v4.2.1.woff2) ;
+}
+
+@font-face {
+  font-family: 'Uthmanic';
+  src: url(../public/fonts/uthmanic/UthmanicHafs1Ver18.woff2) ;
+}
+
+@font-face {
+  font-family: 'Omar';
+  src: url(../public/fonts/OmarNaskh-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'AlQalam';
+  src: url(../public/fonts/AlQalamQuranMajeedv2.ttf);
+}
+
+@font-face {
+  font-family: 'Saleem';
+  src: url(../public/fonts/_PDMS_Saleem_QuranFont.ttf);
+}
+
+@font-face {
+  font-family: 'IsepMisbah';
+  src: url(../public/fonts/IsepMisbah.ttf);
+}
