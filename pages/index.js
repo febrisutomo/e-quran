@@ -57,13 +57,13 @@ export default function Home({ surats }) {
           </svg>
         </div>
         <input
-          className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-4 pl-10 text-gray-900 outline-none focus:border-primary-500  focus:ring-primary-500 dark:border-gray-600  dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+          className="block w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-2 pl-10 text-gray-900 outline-none focus:border-primary-500 focus:ring-primary-500  dark:border-gray-600 dark:bg-gray-700  dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 lg:p-4 lg:pl-10"
           placeholder="Cari surat..."
           onChange={filterBySearch}
         />
       </div>
 
-      <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-5 grid grid-cols-1 gap-2 md:gap-4 md:grid-cols-2 lg:grid-cols-3">
         {suratList.map((surat, index) => (
           <Link href={`surat/${surat.nomor}`} key={surat.nomor}>
             <div className="group flex items-center justify-between rounded-lg border border-gray-300 bg-white px-4 py-2 hover:border-primary-500 hover:bg-primary-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:border-primary-100 dark:hover:bg-primary-700 lg:p-4">
@@ -88,14 +88,13 @@ export default function Home({ surats }) {
                   {surat.nama}
                 </p> */}
                 <i
-                  className={`surah-icon icon-${surat.nomor} text-4xl text-gray-600 dark:text-white`}
+                  className={`surah-icon icon-${surat.nomor} text-3xl text-gray-600 dark:text-white`}
                 ></i>
                 {/* <p className="text-right text-xs font-semibold text-gray-600 dark:text-gray-300">
                   {surat.jumlahAyat} Ayat
                 </p> */}
               </div>
 
-              {/* <i className="surah-icon icon-1 text-4xl text-gray-600 dark:text-white"></i> */}
             </div>
           </Link>
         ))}
